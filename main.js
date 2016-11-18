@@ -1,12 +1,13 @@
-var width = 800, height = 600, game = new Phaser.Game(width, height, Phaser.AUTO, 'game', { preload: preload, create: create});
+var intro, width = 800, height = 600, game = new Phaser.Game(width, height, Phaser.AUTO, 'game', { preload: preload, create: create});
 
 function preload() {
-  this.load.image('loading', '/assets/images/progress.jpg');
-  this.load.image('bg', '/assets/images/retro-game-background.jpg');
-  this.load.script('splash',  'states/splash.js');
+  this.load.image('progress', '/assets/images/progress-pixel.png');
+  intro = this.load.image('intro', '/assets/images/intro.png');
+  this.load.script('startScreen',  'states/start.js');
 }
 
 function create() {
-  this.state.add('splash', splash);
-  this.state.start('splash');
+  this.stage.backgroundColor = "#bdbcba";
+  this.state.add('startScreen', startScreen);
+  this.state.start('startScreen');
 }
