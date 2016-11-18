@@ -3,7 +3,7 @@ var yoke, touch, progressBar, startScreen = function(game){};
 startScreen.prototype = {
   preload: function(){
     intro = game.add.sprite(0, 0, 'intro');
-    this.load.image('yoke', '/assets/images/yoke-pixel.png');
+    this.load.image('yoke', 'assets/images/yoke-pixel.png');
     progressBar = game.add.sprite(100, 400, "progress");
     this.load.setPreloadSprite(progressBar);
     this.load.script('levelOne',  'states/game.js');
