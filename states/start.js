@@ -15,6 +15,7 @@ startScreen.prototype = {
     intro.events.onInputDown.add(function(){
       this.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
       this.scale.startFullScreen(false);
+      screen.orientation.lock('landscape-primary');
       this.state.add('levelOne', levelOne);
       this.state.start('levelOne');
       this.physics.startSystem(Phaser.Physics.ARCADE);
